@@ -1,0 +1,57 @@
+<div class="auth-wrapper">
+    <div class="auth-card glass-panel">
+        <div class="auth-header">
+            <div class="logo">
+                <span class="material-symbols-outlined logo-icon">inventory_2</span>
+                <h2>SmartShelfX</h2>
+            </div>
+            <p class="subtitle">Create an account to manage your inventory.</p>
+        </div>
+
+        <form class="auth-form">
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <div class="input-with-icon">
+                    <span class="material-symbols-outlined icon">person</span>
+                    <input type="text" class="form-control" placeholder="XYZ">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <div class="input-with-icon">
+                    <span class="material-symbols-outlined icon">mail</span>
+                    <input type="email" class="form-control" placeholder="XYZ@gmail.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Role</label>
+                <div class="input-with-icon">
+                    <span class="material-symbols-outlined icon">badge</span>
+                    <select class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="manager">Warehouse Manager</option>
+                        <option value="vendor">Vendor</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="input-with-icon">
+                    <span class="material-symbols-outlined icon">lock</span>
+                    <input type="password" class="form-control" placeholder="••••••••">
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" routerLink="/login">
+                Create Account
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Already have an account? <a routerLink="/login">Log in here</a></p>
+        </div>
+    </div>
+</div>

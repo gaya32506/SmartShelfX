@@ -1,0 +1,244 @@
+<div class="page-container">
+    <div class="header-section">
+        <div>
+            <h1 class="page-title">Inventory Catalog</h1>
+            <p class="page-subtitle">Manage all your products, variations, and stock levels.</p>
+        </div>
+        <div class="action-buttons">
+            <button class="btn btn-secondary">
+                <span class="material-symbols-outlined">upload</span> Batch Import
+            </button>
+            <button class="btn btn-primary" (click)="toggleAddModal()">
+                <span class="material-symbols-outlined">add</span> Add Product
+            </button>
+        </div>
+    </div>
+
+    <div class="filters-bar glass-panel">
+        <div class="search-input">
+            <span class="material-symbols-outlined icon">search</span>
+            <input type="text" class="form-control" placeholder="Search by name, SKU...">
+        </div>
+        <div class="filter-group">
+            <select class="form-control">
+                <option value="">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="peripherals">Peripherals</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <select class="form-control">
+                <option value="">All Vendors</option>
+                <option value="tech-supplier">TechSupplier Inc.</option>
+                <option value="global-parts">GlobalParts Ltd.</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <select class="form-control">
+                <option value="">Stock Status</option>
+                <option value="in_stock">In Stock</option>
+                <option value="low_stock">Low Stock</option>
+                <option value="out_of_stock">Out of Stock</option>
+            </select>
+        </div>
+        <button class="btn btn-secondary icon-btn" title="Filter Settings">
+            <span class="material-symbols-outlined">tune</span>
+        </button>
+    </div>
+
+    <div class="table-container glass-panel">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th class="checkbox-cell"><input type="checkbox"></th>
+                    <th>Product Details</th>
+                    <th>SKU</th>
+                    <th>Category</th>
+                    <th>Vendor</th>
+                    <th>Status</th>
+                    <th class="text-right">Stock</th>
+                    <th class="text-right">Reorder Lvl</th>
+                    <th class="actions-cell">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Item 1 -->
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>
+                        <div class="product-cell">
+                            <div class="product-img avatar bg-info">MK</div>
+                            <div class="product-info">
+                                <span class="product-name">Mechanical Keyboard XYZ</span>
+                                <span class="product-price">$129.99</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge-outline">KBD-001</span></td>
+                    <td>Peripherals</td>
+                    <td>TechSupplier Inc.</td>
+                    <td><span class="status-badge status-danger">Low Stock</span></td>
+                    <td class="text-right font-weight-bold">5</td>
+                    <td class="text-right text-muted">10</td>
+                    <td class="actions-cell">
+                        <button class="action-btn"><span class="material-symbols-outlined">edit</span></button>
+                        <button class="action-btn text-danger"><span
+                                class="material-symbols-outlined">delete</span></button>
+                    </td>
+                </tr>
+
+                <!-- Item 2 -->
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>
+                        <div class="product-cell">
+                            <div class="product-img avatar bg-primary">WM</div>
+                            <div class="product-info">
+                                <span class="product-name">Wireless Mouse Pro</span>
+                                <span class="product-price">$59.99</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge-outline">MOU-042</span></td>
+                    <td>Peripherals</td>
+                    <td>GlobalParts Ltd.</td>
+                    <td><span class="status-badge status-success">In Stock</span></td>
+                    <td class="text-right font-weight-bold">142</td>
+                    <td class="text-right text-muted">20</td>
+                    <td class="actions-cell">
+                        <button class="action-btn"><span class="material-symbols-outlined">edit</span></button>
+                        <button class="action-btn text-danger"><span
+                                class="material-symbols-outlined">delete</span></button>
+                    </td>
+                </tr>
+
+                <!-- Item 3 -->
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>
+                        <div class="product-cell">
+                            <div class="product-img avatar bg-warning">4M</div>
+                            <div class="product-info">
+                                <span class="product-name">27" 4K Monitor IPS</span>
+                                <span class="product-price">$349.00</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge-outline">MON-105</span></td>
+                    <td>Electronics</td>
+                    <td>DisplayCorp</td>
+                    <td><span class="status-badge status-warning">Getting Low</span></td>
+                    <td class="text-right font-weight-bold">18</td>
+                    <td class="text-right text-muted">15</td>
+                    <td class="actions-cell">
+                        <button class="action-btn"><span class="material-symbols-outlined">edit</span></button>
+                        <button class="action-btn text-danger"><span
+                                class="material-symbols-outlined">delete</span></button>
+                    </td>
+                </tr>
+
+                <!-- Item 4 -->
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>
+                        <div class="product-cell">
+                            <div class="product-img avatar bg-secondary">SD</div>
+                            <div class="product-info">
+                                <span class="product-name">1TB NVMe SSD</span>
+                                <span class="product-price">$89.99</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge-outline">SSD-001</span></td>
+                    <td>Electronics</td>
+                    <td>GlobalParts Ltd.</td>
+                    <td><span class="status-badge status-success">In Stock</span></td>
+                    <td class="text-right font-weight-bold">350</td>
+                    <td class="text-right text-muted">50</td>
+                    <td class="actions-cell">
+                        <button class="action-btn"><span class="material-symbols-outlined">edit</span></button>
+                        <button class="action-btn text-danger"><span
+                                class="material-symbols-outlined">delete</span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pagination-area">
+            <span class="text-muted">Showing 1 to 4 of 12,450 entries</span>
+            <div class="pagination-controls">
+                <button class="btn btn-secondary" disabled>Previous</button>
+                <button class="btn btn-primary">1</button>
+                <button class="btn btn-secondary">2</button>
+                <button class="btn btn-secondary">3</button>
+                <span class="text-muted">...</span>
+                <button class="btn btn-secondary">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add/Edit Product Modal Overlay Mock -->
+<div class="modal-overlay" *ngIf="showAddModal" (click)="toggleAddModal()">
+    <div class="modal-card glass-panel" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h3>Add New Product</h3>
+            <button class="icon-btn" (click)="toggleAddModal()"><span
+                    class="material-symbols-outlined">close</span></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" class="form-control" placeholder="Enter product name">
+                </div>
+                <div class="form-group flex-1">
+                    <label class="form-label">SKU</label>
+                    <input type="text" class="form-control" placeholder="e.g. PRD-001">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label class="form-label">Category</label>
+                    <select class="form-control">
+                        <option>Electronics</option>
+                        <option>Peripherals</option>
+                    </select>
+                </div>
+                <div class="form-group flex-1">
+                    <label class="form-label">Vendor</label>
+                    <select class="form-control">
+                        <option>TechSupplier Inc.</option>
+                        <option>GlobalParts Ltd.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label class="form-label">Current Stock</label>
+                    <input type="number" class="form-control" placeholder="0">
+                </div>
+                <div class="form-group flex-1">
+                    <label class="form-label">Reorder Level</label>
+                    <input type="number" class="form-control" placeholder="10">
+                </div>
+                <div class="form-group flex-1">
+                    <label class="form-label">Price ($)</label>
+                    <input type="number" class="form-control" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" rows="3" placeholder="Product description..."></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="toggleAddModal()">Cancel</button>
+            <button class="btn btn-primary" (click)="toggleAddModal()">Save Product</button>
+        </div>
+    </div>
+</div>

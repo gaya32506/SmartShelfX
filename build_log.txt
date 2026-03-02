@@ -1,0 +1,102 @@
+[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+Application bundle generation failed. [4.211 seconds]
+
+Γû▓ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 Γöé   imports: [RouterOutlet],
+        Γò╡   ~~~~~~~
+
+
+Γû▓ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/shared/layout/layout.component.html:7:21:
+      7 Γöé                 <h2 *ngIf="isSidebarOpen">SmartShelfX</h2>
+        Γò╡                      ~~~~
+
+  Error occurs in the template of component LayoutComponent.
+
+    src/app/shared/layout/layout.component.ts:7:15:
+      7 Γöé   templateUrl: './layout.component.html',
+        Γò╡                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Γû▓ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/shared/layout/layout.component.html:19:41:
+      19 Γöé ...     <span class="nav-label" *ngIf="isSidebarOpen">Dashboard</s...
+         Γò╡                                  ~~~~
+
+  Error occurs in the template of component LayoutComponent.
+
+    src/app/shared/layout/layout.component.ts:7:15:
+      7 Γöé   templateUrl: './layout.component.html',
+        Γò╡                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Γû▓ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/shared/layout/layout.component.html:23:41:
+      23 Γöé ...     <span class="nav-label" *ngIf="isSidebarOpen">Inventory Ca...
+         Γò╡                                  ~~~~
+
+  Error occurs in the template of component LayoutComponent.
+
+    src/app/shared/layout/layout.component.ts:7:15:
+      7 Γöé   templateUrl: './layout.component.html',
+        Γò╡                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Γû▓ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/shared/layout/layout.component.html:27:41:
+      27 Γöé ...       <span class="nav-label" *ngIf="isSidebarOpen">Logout</span>
+         Γò╡                                    ~~~~
+
+  Error occurs in the template of component LayoutComponent.
+
+    src/app/shared/layout/layout.component.ts:7:15:
+      7 Γöé   templateUrl: './layout.component.html',
+        Γò╡                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Invalid ICU message. Missing '}'. [plugin angular-compiler]
+
+    src/app/app.component.html:165:0:
+      165 Γöé @media screen and (max-width: 650px) {
+          Γò╡ ~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:7:15:
+      7 Γöé   templateUrl: './app.component.html',
+        Γò╡                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Unclosed block "media screen and" [plugin angular-compiler]
+
+    src/app/app.component.html:165:0:
+      165 Γöé @media screen and (max-width: 650px) {
+          Γò╡ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:7:15:
+      7 Γöé   templateUrl: './app.component.html',
+        Γò╡                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing tag "style". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/app.component.html:178:0:
+      178 Γöé </style>
+          Γò╡ ~~~~~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:7:15:
+      7 Γöé   templateUrl: './app.component.html',
+        Γò╡                ~~~~~~~~~~~~~~~~~~~~~~
+
+
