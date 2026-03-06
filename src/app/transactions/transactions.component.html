@@ -1,0 +1,90 @@
+<div class="transaction-container p-4">
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <div class="auth-card glass-panel p-4">
+        <h3 class="mb-4">Log Transaction</h3>
+        <form (ngSubmit)="onSubmit()" class="auth-form">
+          
+          <div class="form-group mb-3">
+            <label class="form-label">Action Type</label>
+            <div class="input-with-icon">
+              <span class="material-symbols-outlined icon">swap_horiz</span>
+              <select name="type" [(ngModel)]="formData.type" class="form-control">
+                <option value="Stock-In">Stock-In (Incoming)</option>
+                <option value="Stock-Out">Stock-Out (Dispatch)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="form-label">Select Item</label>
+            <div class="input-with-icon">
+              <span class="material-symbols-outlined icon">inventory_2</span>
+              <select name="itemId" [(ngModel)]="formData.itemId" class="form-control" required>
+                <option value="" disabled>Choose item...</option>
+                <option *ngFor="let item of inventory" [value]="item.id">
+                  {{item.name}} (Stock: {{item.stock}})
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="form-label">Quantity</label>
+            <div class="input-with-icon">
+              <span class="material-symbols-outlined icon">numbers</span>
+              <input type="number" name="quantity" [(ngModel)]="formData.quantity" class="form-control" placeholder="0">
+            </div>
+          </div>
+
+          <div class="form-group mb-4">
+            <label class="form-label">Handler Name</label>
+            <div class="input-with-icon">
+              <span class="material-symbols-outlined icon">person</span>
+              <input type="text" name="handler" [(ngModel)]="formData.handler" class="form-control" placeholder="Staff Name">
+            </div>
+          </div>
+
+          <button type="submit" [className]="formData.type === 'Stock-In' ? 'btn btn-primary btn-block bg-success' : 'btn btn-primary btn-block bg-danger'">
+            Process {{ formData.type }}
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="glass-panel p-4 h-100">
+        <h3 class="mb-4">Transaction History</h3>
+        <div class="table-responsive">
+          <table class="table custom-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Item</th>
+                <th>Type</th>
+                <th>Qty</th>
+                <th>Handler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tx of transactions">
+                <td>{{ tx.timestamp | date:'shortTime' }}</td>
+                <td><strong>{{ tx.itemName }}</strong></td>
+                <td>
+                  <span [class]="tx.type === 'Stock-In' ? 'badge bg-success-soft' : 'badge bg-danger-soft'">
+                    {{ tx.type }}
+                  </span>
+                </td>
+                <td>{{ tx.quantity }}</td>
+                <td>{{ tx.handler }}</td>
+              </tr>
+              <tr *ngIf="transactions.length === 0">
+                <td colspan="5" class="text-center text-muted py-4">No transactions recorded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

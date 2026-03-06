@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [RouterLink],
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  registerData = {
+    fullName: '',
+    email: '',
+    role: 'manager',
+    password: ''
+  };
 
+  constructor(private router: Router) {}
+
+  onRegister() {
+    console.log('User Registered:', this.registerData);
+    alert("Account created successfully!");
+    this.router.navigate(['/login']);
+  }
 }

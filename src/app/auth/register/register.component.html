@@ -8,12 +8,12 @@
             <p class="subtitle">Create an account to manage your inventory.</p>
         </div>
 
-        <form class="auth-form">
+        <form class="auth-form" (ngSubmit)="onRegister()">
             <div class="form-group">
                 <label class="form-label">Full Name</label>
                 <div class="input-with-icon">
                     <span class="material-symbols-outlined icon">person</span>
-                    <input type="text" class="form-control" placeholder="XYZ">
+                    <input type="text" name="fullName" [(ngModel)]="registerData.fullName" class="form-control" placeholder="XYZ" required>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
                 <label class="form-label">Email Address</label>
                 <div class="input-with-icon">
                     <span class="material-symbols-outlined icon">mail</span>
-                    <input type="email" class="form-control" placeholder="XYZ@gmail.com">
+                    <input type="email" name="email" [(ngModel)]="registerData.email" class="form-control" placeholder="XYZ@gmail.com" required>
                 </div>
             </div>
 
@@ -29,8 +29,7 @@
                 <label class="form-label">Role</label>
                 <div class="input-with-icon">
                     <span class="material-symbols-outlined icon">badge</span>
-                    <select class="form-control">
-                        <option value="admin">Admin</option>
+                    <select name="role" [(ngModel)]="registerData.role" class="form-control">
                         <option value="manager">Warehouse Manager</option>
                         <option value="vendor">Vendor</option>
                     </select>
@@ -41,11 +40,11 @@
                 <label class="form-label">Password</label>
                 <div class="input-with-icon">
                     <span class="material-symbols-outlined icon">lock</span>
-                    <input type="password" class="form-control" placeholder="••••••••">
+                    <input type="password" name="password" [(ngModel)]="registerData.password" class="form-control" placeholder="••••••••" required>
                 </div>
             </div>
 
-            <button type="button" class="btn btn-primary btn-block" routerLink="/login">
+            <button type="submit" class="btn btn-primary btn-block">
                 Create Account
             </button>
         </form>

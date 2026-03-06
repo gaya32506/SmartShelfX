@@ -1,0 +1,90 @@
+/* Container Spacing */
+.transaction-container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Glass Effect Card */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05); /* Darker glass for dark mode */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    color: #ffffff;
+}
+
+/* Form Styling */
+.form-label {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon .icon {
+    position: absolute;
+    left: 12px;
+    color: #667eea;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    padding-left: 40px !important;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25) !important;
+}
+
+/* History Table Styling */
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.custom-table th {
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-table td {
+    padding: 16px 12px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Status Badges */
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.bg-success-soft {
+    background: rgba(72, 187, 120, 0.2);
+    color: #68d391;
+}
+
+.bg-danger-soft {
+    background: rgba(245, 101, 101, 0.2);
+    color: #feb2b2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

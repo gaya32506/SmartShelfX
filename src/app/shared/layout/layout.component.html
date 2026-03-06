@@ -1,5 +1,4 @@
 <div class="layout-wrapper" [class.sidebar-closed]="!isSidebarOpen">
-    <!-- Sidebar -->
     <aside class="sidebar glass-panel">
         <div class="sidebar-header">
             <div class="logo">
@@ -22,6 +21,10 @@
                 <span class="material-symbols-outlined nav-icon">category</span>
                 <span class="nav-label" *ngIf="isSidebarOpen">Inventory Catalog</span>
             </a>
+            <a routerLink="/transactions" routerLinkActive="active" class="nav-item">
+                <span class="material-symbols-outlined nav-icon">swap_horiz</span>
+                <span class="nav-label" *ngIf="isSidebarOpen">Transactions</span>
+            </a>
             <a routerLink="/login" class="nav-item logout">
                 <span class="material-symbols-outlined nav-icon">logout</span>
                 <span class="nav-label" *ngIf="isSidebarOpen">Logout</span>
@@ -29,29 +32,9 @@
         </nav>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
         <header class="topbar glass-panel">
-            <div class="topbar-left">
-                <div class="search-bar">
-                    <span class="material-symbols-outlined">search</span>
-                    <input type="text" placeholder="Search inventory..." class="form-control">
-                </div>
-            </div>
-            <div class="topbar-right">
-                <button class="icon-btn">
-                    <span class="material-symbols-outlined">notifications</span>
-                    <span class="badge">3</span>
-                </button>
-                <div class="user-profile">
-                    <div class="avatar">AD</div>
-                    <div class="user-info">
-                        <span class="user-name">Admin User</span>
-                        <span class="user-role">Administrator</span>
-                    </div>
-                </div>
-            </div>
-        </header>
+            </header>
 
         <div class="content-area">
             <router-outlet></router-outlet>
