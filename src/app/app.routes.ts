@@ -5,6 +5,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { InventoryCatalogComponent } from './inventory/inventory-catalog/inventory-catalog.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { ForecastComponent } from './forecast/forecast.component';
+
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,7 +18,10 @@ export const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'inventory', component: InventoryCatalogComponent },
-      { path: 'transactions', component: TransactionsComponent }
+      { path: 'transactions', component: TransactionsComponent },
+      { path: 'forecast', component: ForecastComponent }
+
+
     ]
   },
   { path: '**', redirectTo: 'dashboard' }

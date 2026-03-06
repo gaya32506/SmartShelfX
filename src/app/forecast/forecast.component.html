@@ -1,0 +1,34 @@
+<div class="forecast-container p-4">
+    <h2 class="text-white mb-4">AI Demand Forecasting</h2>
+
+    <div class="glass-panel mb-4 p-4">
+        <h5 class="text-white">Predicted Weekly Demand Trend</h5>
+        <canvas #forecastChart height="100"></canvas>
+    </div>
+
+    <div class="glass-panel p-4">
+        <h5 class="text-white mb-3">Stockout Risk Analysis</h5>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Forecast</th>
+                    <th>Current Stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of predictionData">
+                    <td>{{ item.sku }}</td>
+                    <td>{{ item.forecast }} Units</td>
+                    <td>{{ item.currentStock }}</td>
+                    <td>
+                        <span class="badge" [ngClass]="item.risk ? 'bg-danger-soft' : 'bg-success-soft'">
+                            {{ item.risk ? 'Restock Required' : 'Optimal' }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
