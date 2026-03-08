@@ -1,0 +1,59 @@
+<div class="restock-container p-4">
+    <h2 class="text-white mb-4">Auto-Restock Recommendations</h2>
+
+    <div class="glass-panel p-4">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Stock</th>
+                    <th>Target</th>
+                    <th>Vendor</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of suggestedItems">
+                    <td>{{ item.name }}</td>
+                    <td><span class="text-danger">{{ item.currentStock }}</span></td>
+                    <td>{{ item.minLevel }}</td>
+                    <td>{{ item.vendor }}</td>
+                    <td>
+                        <button class="btn-primary-sm" (click)='openPOModal(item)'>Generate PO</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-overlay" *ngIf="isModalOpen">
+        <div class="modal-content glass-panel">
+            <h3>Create Purchase Order</h3>
+            <hr class="border-light">
+            
+            <div class="po-details mt-3">
+                <p><strong>Vendor:</strong> {{ selectedItem?.vendor }}</p>
+                <p><strong>Item:</strong> {{ selectedItem?.name }} ({{ selectedItem?.id }})</p>
+                
+                <div class="form-group mt-3">
+                    <label>Order Quantity</label>
+                    <input type="number" [(ngModel)]="poData.quantity" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label>Priority</label>
+                    <select [(ngModel)]="poData.priority" class="form-control">
+                        <option value="Low">Low</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-actions mt-4">
+                <button class="btn-secondary" (click)="closeModal()">Cancel</button>
+                <button class="btn-primary" (click)="sendPO()">Send to Vendor</button>
+            </div>
+        </div>
+    </div>
+</div>
