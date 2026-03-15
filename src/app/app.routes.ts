@@ -7,6 +7,7 @@ import { InventoryCatalogComponent } from './inventory/inventory-catalog/invento
 import { TransactionsComponent } from './transactions/transactions.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { RestockComponent } from './restock/restock.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,7 +21,8 @@ export const routes: Routes = [
       { path: 'inventory', component: InventoryCatalogComponent },
       { path: 'transactions', component: TransactionsComponent },
       { path: 'forecast', component: ForecastComponent },
-      { path: 'restock', component: RestockComponent }
+      { path: 'restock', component: RestockComponent },
+      { path: 'analytics', component: AnalyticsComponent }
 
 
     ]
