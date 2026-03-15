@@ -1,0 +1,26 @@
+<div class="analytics-container p-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-white">Inventory Analytics & Reports</h2>
+    <div class="export-actions">
+      <button class="btn-outline" (click)="exportData('PDF')">Export PDF</button>
+      <button class="btn-outline" (click)="exportData('Excel')">Export Excel</button>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="glass-panel p-4">
+      <h5 class="text-white text-center">Category Distribution</h5>
+      <canvas #pieChart></canvas>
+    </div>
+
+    <div class="glass-panel p-4">
+      <h5 class="text-white text-center">Purchase vs Sales</h5>
+      <canvas #barChart></canvas>
+    </div>
+
+    <div class="glass-panel p-4 full-width">
+      <h5 class="text-white text-center">Restock vs Demand Trends</h5>
+      <canvas #lineChart height="80"></canvas>
+    </div>
+  </div>
+</div>

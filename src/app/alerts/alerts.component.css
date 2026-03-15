@@ -1,0 +1,29 @@
+.alerts-container {
+    animation: slideIn 0.4s ease-out;
+}
+
+.custom-table td {
+    padding: 1.2rem;
+    vertical-align: middle;
+}
+
+.btn-dismiss {
+    background: transparent;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-dismiss:hover {
+    color: #f56565;
+}
+
+.text-danger { color: #ff6b6b !important; }
+.text-warning { color: #f6ad55 !important; }
+.text-info { color: #63b3ed !important; }
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}

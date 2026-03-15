@@ -25,10 +25,6 @@
                 <span class="material-symbols-outlined nav-icon">swap_horiz</span>
                 <span class="nav-label" *ngIf="isSidebarOpen">Transactions</span>
             </a>
-            <a routerLink="/login" class="nav-item logout">
-                <span class="material-symbols-outlined nav-icon">logout</span>
-                <span class="nav-label" *ngIf="isSidebarOpen">Logout</span>
-            </a>
             <a routerLink="/forecast" routerLinkActive="active" class="nav-item">
                 <span class="material-symbols-outlined nav-icon">online_prediction</span>
                 <span class="nav-label" *ngIf="isSidebarOpen">AI Forecast</span>
@@ -37,12 +33,34 @@
                 <span class="material-symbols-outlined nav-icon">shopping_cart_checkout</span>
                 <span class="nav-label" *ngIf="isSidebarOpen">Auto-Restock</span>
             </a>
+            <a routerLink="/alerts" routerLinkActive="active" class="nav-item">
+                <span class="material-symbols-outlined nav-icon">notifications_active</span>
+                <span class="nav-label" *ngIf="isSidebarOpen">Alerts Center</span>
+            </a>
+            <a routerLink="/login" class="nav-item logout">
+                <span class="material-symbols-outlined nav-icon">logout</span>
+                <span class="nav-label" *ngIf="isSidebarOpen">Logout</span>
+            </a>
+            <a routerLink="/analytics" routerLinkActive="active" class="nav-item">
+                <span class="material-symbols-outlined nav-icon">analytics</span>
+                <span class="nav-label" *ngIf="isSidebarOpen">Analytics</span>
+            </a>
         </nav>
     </aside>
 
     <main class="main-content">
         <header class="topbar glass-panel">
-            </header>
+            <div class="topbar-right">
+                <div class="notification-bell" [routerLink]="['/alerts']">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="user-profile">
+                    <span class="username" *ngIf="isSidebarOpen">Admin</span>
+                    <span class="material-symbols-outlined">account_circle</span>
+                </div>
+            </div>
+        </header>
 
         <div class="content-area">
             <router-outlet></router-outlet>

@@ -1,0 +1,37 @@
+<div class="alerts-container p-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-white">Alerts & Notifications</h2>
+    <span class="badge bg-primary">{{ alerts.length }} Active Notifications</span>
+  </div>
+
+  <div class="glass-panel p-0">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Message</th>
+          <th>Priority</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alert of alerts">
+          <td><strong>{{ alert.type }}</strong></td>
+          <td>{{ alert.message }}</td>
+          <td>
+            <span [ngClass]="getSeverityClass(alert.severity)">
+              ● {{ alert.severity | uppercase }}
+            </span>
+          </td>
+          <td>{{ alert.date | date:'shortTime' }}</td>
+          <td>
+            <button class="btn-dismiss" (click)="dismissAlert(alert.id)">
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
